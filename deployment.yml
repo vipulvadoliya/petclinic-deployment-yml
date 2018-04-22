@@ -1,0 +1,12 @@
+---
+- hosts: appserver
+  remote_user: ubuntu
+  become: true
+  gather_facts: false
+  tasks:
+  - name: download package from artifactory server
+    command: wget http://35.185.114.21:8081/artifactory/abcbank-package/petclinic.war
+  - name: deploy war file to server
+    copy: src=~/petclinic.war dest=/opt/apache-tomcat-8.5.30/webapps/
+  - name: restart app server
+    script: /opt/apache-tomcat-8.5.30/bin/catalina.sh start
