@@ -9,4 +9,4 @@
   - name: deploy war file to server
     command: cp ~/petclinic.war /opt/apache-tomcat-8.5.30/webapps/
   - name: restart app server
-    script: /opt/apache-tomcat-8.5.30/bin/catalina.sh start
+    command: sh /opt/apache-tomcat-8.5.30/bin/catalina.sh start
