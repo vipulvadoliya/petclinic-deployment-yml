@@ -5,7 +5,7 @@
   gather_facts: false
   tasks:
   - name: download package from artifactory server
-    command: wget http://35.185.114.21:8081/artifactory/abcbank-package/petclinic.war
+    command: wget http://35.196.201.46:8081/artifactory/abcbank-package/petclinic.war
   - name: deploy war file to server
     command: cp ~/petclinic.war /opt/apache-tomcat-8.5.30/webapps/
   - name: restart app server
