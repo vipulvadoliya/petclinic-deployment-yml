@@ -8,7 +8,7 @@
     command: wget http://35.196.201.46:8081/artifactory/abcbank-package/petclinic.war
   - name: deploy war file to server
     command: cp ~/petclinic.war /opt/apache-tomcat-8.5.30/webapps/
-  - pause:
-    minutes: 1
+  - name: pause
+    pause: minutes=1
   - name: restart app server
     command: sh /opt/apache-tomcat-8.5.30/bin/catalina.sh start
